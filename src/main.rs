@@ -238,7 +238,6 @@ fn filed_init(cache_size: u32) -> Result<()> {
 }
 
 /* Signal Handler */
-#[link(name = "filed_signal_handler")]
 extern "C" fn filed_signal_handler(signal_number: libc::c_int) {
     let signal = signal::Signal::try_from(signal_number).unwrap();
     if signal == signal::Signal::SIGHUP {
